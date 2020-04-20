@@ -35,5 +35,34 @@ namespace Logica
         {
             return (listaNumeros.FindAll(x => x % 2 == 0).Sum()) * ((listaNumeros.First(x=>x % 2 != 0)*2) + ((listaNumeros.FindAll(x => x % 2 != 0).Sum())*-1));
         }
+
+        public static DateTime ObtenerFechaDeUnString (this string fecha)
+        {
+            DateTime fechaConvertida = new DateTime();
+            try
+            {
+                fechaConvertida = DateTime.Parse(fecha);
+            }
+            catch(Exception)
+            {
+                fechaConvertida = DateTime.MinValue;
+            }
+            return fechaConvertida;
+        }
+
+        public static string DevolverStringInvertido(this string cadena)
+        {
+            return cadena.Reverse().ToString();
+        }
+
+        public static string ConcatenarArrayStrings(this string[] cadenas, char separador)
+        {
+            return string.Join(separador.ToString(), cadenas);
+        }
+
+        public static bool DeterminarSiEsMail(this string texto)
+        {
+
+        }
     }
 }
