@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="ConversorTemperatura.cs" />
+    <Compile Include="NumeroEntero.cs" />
     <Compile Include="Extensiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
