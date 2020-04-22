@@ -12,6 +12,7 @@ namespace Logica
     {
         public static int RetornarCantidadPalabras(this string cadena)
         {
+            //Si cadena es null, da una excepcion
             string[] arregloPalabras = cadena.Split(' ');
             return arregloPalabras.Count();
         }
@@ -35,6 +36,12 @@ namespace Logica
 
         public static int ObtenerMultipicacionSumaParesRestaImpares(this List<int> listaNumeros)
         {
+            //Otra forma
+            //int sumaPares = listaNumeros.Where(x => x % 2 == 0).Sum();
+            //int restaImpares = listaNumeros.Where(x => x % 2 != 0).Select(x=> x * -1).Sum();
+
+            //return sumaPares * restaImpares;
+
             return (listaNumeros.FindAll(x => x % 2 == 0).Sum()) * ((listaNumeros.First(x=>x % 2 != 0)*2) + ((listaNumeros.FindAll(x => x % 2 != 0).Sum())*-1));
         }
 
