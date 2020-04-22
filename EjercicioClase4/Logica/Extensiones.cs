@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
 
 namespace Logica
 {
@@ -60,9 +62,31 @@ namespace Logica
             return string.Join(separador.ToString(), cadenas);
         }
 
-        public static bool DeterminarSiEsMail(this string texto)
+        public static bool ComprobarEmail(this string email)
         {
-
+            String formato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, formato))
+            {
+                if (Regex.Replace(email, formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        public static int RestarDosNumeros(this int entero1, int entero2)
+        {
+            return entero1 - entero2;
+        }
+
+        
     }
 }
