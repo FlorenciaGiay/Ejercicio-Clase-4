@@ -8,14 +8,16 @@ namespace Logica
 {
     public static class ConversorTemperatura
     {
+        private static double factorConversion = 2.12;
+
         public static double ObtenerTemperaturaFahrenheit(double temperatura)
         {
-            return temperatura * 2.12;
+            return temperatura * factorConversion;
         }
 
         public static double ObtenerTemperaturaCelcius(double temperatura)
         {
-            return temperatura / 2.12;
+            return temperatura / factorConversion;
         }
     }
 }
